@@ -21,7 +21,7 @@
 
         <div class="menu">
           <li><a href="#">Accueil</a></li>
-          <li><a href="#">livres</a></li>
+          <li><a href="#">blog</a></li>
           <li><a href="./connexion">Compte</a></li>
           <!-- <li><a href="#">Connexion</a></li> -->
         </div>
@@ -32,7 +32,7 @@
   
 
     <!-- partie livre islamique -->
-    <div class="grand"><div class="text"><h1>Islamique</h1></div></div>
+    <div class="grand"><div class="text"><h1>Cusine</h1></div></div>
     <!-- partie livre islamique -->
     <% if (articles) { %>
  <div class="parent">
@@ -45,7 +45,7 @@
   <% let displayedArticlesIslam = 0; %>
 
 <% articles.forEach(function(article) { %>
-  <% if (article.categorie === 'islam' && displayedArticlesIslam < 3) { %>
+  <% if (article.categorie === 'Cusine' && displayedArticlesIslam < 3) { %>
     <!-- Votre code HTML pour afficher un article ici -->
     <div class="carre">
       <a class="image" href="/connexion"><img src="/<%= article.image %>" alt="" height="100px" width="100px"></a>
