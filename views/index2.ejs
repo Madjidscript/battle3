@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style2.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/hearder2.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <!-- logo -->
+      <a href="index2" class="logo">Md Service</a>
+      <!-- menu navigation -->
+      <!-- icons hanberguer -->
+      <ul class="nav-links">
+        <input type="checkbox" id="papa" />
+        <label for="papa" class="hamburger">&#9776;</label>
+
+        <div class="menu">
+          <li><a href="index2">Accueil</a></li>
+          <li><a href="index2">Livres</a></li>
+          <li><a href="contact">Contact</a></li>
+
+          <li><a href="/" id="principale"></a></li>
+
+          <li>
+            <a href="./panier"
+              ><img src="../picture/panier.svg" alt="" /><span id="count">(0)</span></a
+            >
+          </li>
+          <li>
+            <a href="./profil" 
+              ><img src="../picture/profil.svg" alt=""
+            /><span>
+              <% if (typeof user !="undefined" && user.nom) { %>
+                <span class="validation">
+                  <%= user.nom %> <br>
+                </span>
+              <% }%>
+            </span></a>
+          </li>
+          <li><a href="/deconnexion">Deconnexion</a></li>
+        </div>
+      </ul>
+    </nav>
+
+
+
+    <div class="partie1"></div>
+  
+    <div class="grand"><div class="text"><h1>Islamique</h1></div></div>
+    <!-- partie livre islamique -->
+    <% if (articles) { %>
+ <div class="parent">
+  
+  <div class="container" id="">
+
+    
+ 
+<div class="card"  style="margin-top: 90px;">
+  <% let displayedArticlesIslam = 0; %>
+
+<% articles.forEach(function(article) { %>
+  <% if (article.categorie === 'islam' && displayedArticlesIslam < 3) { %>
+    <!-- Votre code HTML pour afficher un article ici -->
+    <div class="carre">
+      <a class="image" href="/detail/<%= article._id %>"><img src="/<%= article.image %>" alt="" height="100px" width="100px"></a>
+      <div class="prix">
+        <div class="titre"><%= article.title %></div>
+        <div class="price"><%= article.prix %>$</div>
+      </div>
+      <div class="bouton">
+        <div class="img"><a href=""><img src="../picture/panier.svg" alt=""></a></div>
+        <div class="texte">Ajouter Au Panier</div>
+      </div>
+    </div>
+
+    
+    <!-- Fin du code HTML de l'article -->
+
+    <% displayedArticlesIslam++; %>
+  <% } %>
+<% }); %>
+
+<div class="grands"><a href="/islamique" class="format" >voir plus</a></div></div>
+
+      
+      
+</div>
+  </div>
+  
+    <!-- partie livre Politique -->
+    <div class="grand"><div class="text"><h1>Politique</h1></div></div>
+    <div class="container" id="">
+
+      <div class="card"  style="margin-top: 90px;">
+        <% let displayedArticlesPolitique = 0; %>
+      
+      <% articles.forEach(function(article) { %>
+        <% if (article.categorie === 'politique' && displayedArticlesPolitique < 3) { %>
+          <!-- Votre code HTML pour afficher un article ici -->
+          <div class="carre">
+            <a class="image" href="/detail/<%= article._id %>"><img src="/<%= article.image %>" alt="" height="100px" width="100px"></a>
+            <div class="prix">
+              <div class="titre"><%= article.title %></div>
+              <div class="price"><%= article.prix %>$</div>
+            </div>
+            <div class="bouton">
+              <div class="img"><a href=""><img src="../picture/panier.svg" alt=""></a></div>
+              <div class="texte">Ajouter Au Panier</div>
+            </div>
+          </div>
+      
+          
+          <!-- Fin du code HTML de l'article -->
+      
+          <% displayedArticlesPolitique++; %>
+        <% } %>
+      <% }); %>
+      
+      
+      
+            
+            
+      </div>
+      <div class="grands"><a href="/politique" class="format" >voir plus</a></div></div>
+        </div>
+     
+    <!-- partie livre sportif -->
+    <div class="grand"><div class="text"><h1>Sportif</h1></div></div>
+    <div class="container" id="">
+
+ 
+ 
+      <div class="card"  style="margin-top: 90px;">
+        <% let displayedArticlesSportif = 0; %>
+      
+      <% articles.forEach(function(article) { %>
+        <% if (article.categorie === 'sportif' && displayedArticlesSportif < 3) { %>
+          <!-- Votre code HTML pour afficher un article ici -->
+          <div class="carre">
+            <a class="image" href="/detail/<%= article._id %>">
+              <img src="/<%= article.image %>" alt="" height="100px" width="100px" class="images">
+            </a>
+            <div class="prix">
+              <div class="titre"><%= article.title %></div>
+              <div class="price"><%= article.prix %>$</div>
+            </div>
+            <div class="bouton">
+              <div class="img"><a href=""><img src="../picture/panier.svg" alt=""></a></div>
+              <div class="texte">Ajouter Au Panier</div>
+            </div>
+          </div>
+      
+          
+          <!-- Fin du code HTML de l'article -->
+      
+          <% displayedArticlesSportif++; %>
+        <% } %>
+      <% }); %>
+      
+      
+      
+            
+            
+      </div>
+        </div>
+        
+        <div class="grands"><a href="/sportif" class="format" >voir plus</a></div></div>
+</div>
+    <% }%>
+    
+   
+
+
+
+
+    <!-- partie temoignage -->
+    <!-- PArtie temoignage -->
+    <div class="content" style="margin-top: 40px">
+      
+      <div class="box2">
+        <div class="card cardre">
+          <div class="image">
+            <img
+              src="/picture/madjid.jpg"
+              alt=""
+              height="60px"
+              width="60px"
+              style="border-radius: 100%;"
+             
+            />
+          </div>
+          <div class="texts">
+            <p>
+              <!-- <strong class="nom" style="color: #00c853">Owo_Mi</strong>  -->
+              Je tiens à exprimer ma profonde gratitude envers l'équipe de [Nom de la Librairie] pour 
+              leur service exceptionnel et leur engagement envers les amoureux de la lecture comme moi.
+               Cette librairie est bien plus qu'un simple lieu où l'on peut acheter des livres ; c'est un sanctuaire pour 
+              les amoureux des mots, un endroit où les rêves prennent vie entre les pages de chaque ouvrage.
+            </p>
+          </div>
+          <div class="reference">
+            <!-- <div class="nom"><p>Yaya</p></div> -->
+            <!-- <div class="numero"><span><img src="./picture/gauche.svg" alt="" srcset="" height="40px" width="40px"></span><strong>1</strong>2 <span><img src="./picture/droit.svg" alt="" height="40px" width="40px"></span></div> -->
+          </div>
+        </div>
+        <div class="card cardre">
+          <div class="image">
+            <img
+              src="/picture/madjid.jpg"
+              alt=""
+              height="60px"
+              width="60px"
+              style="border-radius: 100%;"
+             
+            />
+          </div>
+          <div class="texts">
+            <p>
+              <!-- <strong style="color: #00c853">Owo_Mi</strong> a transformé mes -->
+              Je tiens à exprimer ma profonde gratitude envers l'équipe de [Nom de la Librairie] pour 
+              leur service exceptionnel et leur engagement envers les amoureux de la lecture comme moi.
+               Cette librairie est bien plus qu'un simple lieu où l'on peut acheter des livres ; c'est un sanctuaire pour 
+              les amoureux des mots, un endroit où les rêves prennent vie entre les pages de chaque ouvrage.
+            </p>
+          </div>
+          <div class="reference">
+            <!-- <div class="nom"><p>Yaya</p></div> -->
+            <!-- <div class="numero"><span><img src="./picture/gauche.svg" alt="" srcset="" height="40px" width="40px"></span>1<strong>2</strong><span><img src="./picture/droit.svg" alt="" height="40px" width="40px"></span></div> -->
+          </div>
+        </div>
+        <div class="card cardre">
+          <div class="image">
+            <img
+              src="/picture/madjid.jpg"
+              alt=""
+              height="60px"
+              width="60px"
+              style="border-radius: 100%;"
+             
+            />
+          </div>
+          <div class="texts">
+            <p>
+              <!-- <strong style="color: #00c853">Owo_Mi</strong>  -->
+              Je tiens à exprimer ma profonde gratitude envers l'équipe de [Nom de la Librairie] pour 
+              leur service exceptionnel et leur engagement envers les amoureux de la lecture comme moi.
+               Cette librairie est bien plus qu'un simple lieu où l'on peut acheter des livres ; c'est un sanctuaire pour 
+              les amoureux des mots, un endroit où les rêves prennent vie entre les pages de chaque ouvrage.
+            </p>
+          </div>
+          <div class="reference">
+            <!-- <div class="nom"><p>Yaya</p></div> -->
+            <!-- <div class="numero"><span><img src="./picture/gauche.svg" alt="" srcset="" height="40px" width="40px"></span><strong>1</strong>2 <span><img src="./picture/droit.svg" alt="" height="40px" width="40px"></span></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- PArtie temoignage -->
+
+
+    <footer>
+      <div class="box">
+        <div class="card1">
+          <h3 class="titre" style="margin-top: 25px">
+            A propos
+            <div class="urderline"><span></span></div>
+          </h3>
+          <p class="tt" style="font-size: 14px" >
+            Hello ,nous somme <strong>MdServices</strong> un site de librairie  en ligne légal 
+          . Vous y retrouverez de nombreux livres,des
+            livres sportifs politiques ainsi que des livres islamique
+            pour les grands et les petits
+          </p>
+        </div>
+        <div class="card2">
+          <h3 class="titre">
+            Rejoignez Nous
+            <div class="urderline"><span></span></div>
+          </h3>
+          <p>
+            <a href=""><img src="/picture/facebook.svg" alt="" /></a>
+            <a href="" style="margin-left: 5px; margin-right: 5px">
+              <img src="/picture/whatsapp-128.svg" alt=""
+            /></a>
+            <a href=""><img src="/picture/telegram.svg" alt="" /></a>
+          </p>
+        </div>
+        <div class="card3">
+          <h3 class="titre">
+            Contactez Nous
+            <div class="urderline"><span></span></div>
+          </h3>
+          <p>01 53 53 50 65</p>
+          <p>01 53 53 50 65</p>
+        </div>
+      </div>
+      <br />
+      <hr />
+      <div class="copy">copyright © 2023 mena - côte d'ivoire</div>
+    </footer>
+    <script src="../js_frontend/index2.js"></script>
+    <script src="../js_frontend/panier.js"></script>
+  </body>
+</html>

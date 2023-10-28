@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/hearder1.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <!-- logo-->
+      <a href="./index.html" class="logo">MD service</a>
+
+      <!-- menu navigation -->
+      <ul class="nav-links">
+        <!-- icons hanberguer -->
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+        <div class="menu">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">livres</a></li>
+          <li><a href="./connexion">Compte</a></li>
+          <!-- <li><a href="#">Connexion</a></li> -->
+        </div>
+      </ul>
+    </nav>
+
+    <div class="partie1"></div>
+  
+
+    <!-- partie livre islamique -->
+    <div class="grand"><div class="text"><h1>Islamique</h1></div></div>
+    <!-- partie livre islamique -->
+    <% if (articles) { %>
+ <div class="parent">
+  
+  <div class="container" id="">
+
+    
+ 
+<div class="card"  style="margin-top: 90px;">
+  <% let displayedArticlesIslam = 0; %>
+
+<% articles.forEach(function(article) { %>
+  <% if (article.categorie === 'islam' && displayedArticlesIslam < 3) { %>
+    <!-- Votre code HTML pour afficher un article ici -->
+    <div class="carre">
+      <a class="image" href="/connexion"><img src="/<%= article.image %>" alt="" height="100px" width="100px"></a>
+      <div class="prix">
+        <div class="titre"><%= article.title %></div>
+        <div class="price"><%= article.prix %>$</div>
+      </div>
+      <div class="bouton">
+        <div class="img"><a href=""><img src="../picture/panier.svg" alt=""></a></div>
+        <div class="texte">Ajouter Au Panier</div>
+      </div>
+    </div>
+
+    
+    <!-- Fin du code HTML de l'article -->
+
+    <% displayedArticlesIslam++; %>
+  <% } %>
+<% }); %>
+
+
+
+      
+      
+</div>
+  </div>
+  
+    <!-- partie livre Politique -->
+    <div class="grand" style="margin-top: 20px;"><div class="text"><h1>Politique</h1></div></div>
+    <div class="container" id="">
+
+      <div class="card"  style="margin-top: 90px;">
+        <% let displayedArticlesPolitique = 0; %>
+      
+      <% articles.forEach(function(article) { %>
+        <% if (article.categorie === 'politique' && displayedArticlesPolitique < 3) { %>
+          <!-- Votre code HTML pour afficher un article ici -->
+          <div class="carre">
+            <a class="image" href="/connexion"><img src="/<%= article.image %>" alt="" height="100px" width="100px"></a>
+            <div class="prix">
+              <div class="titre"><%= article.title %></div>
+              <div class="price"><%= article.prix %>$</div>
+            </div>
+            <div class="bouton">
+              <div class="img"><a href=""><img src="../picture/panier.svg" alt=""></a></div>
+              <div class="texte">Ajouter Au Panier</div>
+            </div>
+          </div>
+      
+          
+          <!-- Fin du code HTML de l'article -->
+      
+          <% displayedArticlesPolitique++; %>
+        <% } %>
+      <% }); %>
+      
+      
+      
+            
+            
+      </div>
+      
+        </div>
+     
+    <!-- partie livre sportif -->
+    <div class="grand"  style="margin-top: 20px;"><div class="text"><h1>Sportif</h1></div></div>
+    <div class="container" id="">
+
+ 
+ 
+      <div class="card"  style="margin-top: 90px;">
+        <% let displayedArticlesSportif = 0; %>
+      
+      <% articles.forEach(function(article) { %>
+        <% if (article.categorie === 'sportif' && displayedArticlesSportif < 3) { %>
+          <!-- Votre code HTML pour afficher un article ici -->
+          <div class="carre">
+            <a class="image" href="/connexion">
+              <img src="/<%= article.image %>" alt="" height="100px" width="100px">
+            </a>
+            <div class="prix">
+              <div class="titre"><%= article.title %></div>
+              <div class="price"><%= article.prix %>$</div>
+            </div>
+            <div class="bouton">
+              <div class="img"><a href=""><img src="../picture/panier.svg" alt=""></a></div>
+              <div class="texte">Ajouter Au Panier</div>
+            </div>
+          </div>
+      
+          
+          <!-- Fin du code HTML de l'article -->
+      
+          <% displayedArticlesSportif++; %>
+        <% } %>
+      <% }); %>
+      
+      
+      
+            
+            
+      </div>
+        </div>
+        
+        
+</div>
+    <% }%>
+    
+   
+
+
+    
+     
+
+    <footer>
+      <div class="box">
+        <div class="card1">
+          <h3 class="titre" style="margin-top: 25px">
+            A propos
+            <div class="urderline"><span></span></div>
+          </h3>
+          <p class="tt" style="font-size: 14px" >
+            Hello ,nous somme <strong>MdServices</strong> un site de librairie  en ligne légal 
+          . Vous y retrouverez de nombreux livres,des
+            livres sportifs politiques ainsi que des livres islamique
+            pour les grands et les petits
+          </p>
+        </div>
+        <div class="card2">
+          <h3 class="titre">
+            Rejoignez Nous
+            <div class="urderline"><span></span></div>
+          </h3>
+          <p>
+            <a href=""><img src="/picture/facebook.svg" alt="" /></a>
+            <a href="" style="margin-left: 5px; margin-right: 5px">
+              <img src="/picture/whatsapp-128.svg" alt=""
+            /></a>
+            <a href=""><img src="/picture/telegram.svg" alt="" /></a>
+          </p>
+        </div>
+        <div class="card3">
+          <h3 class="titre">
+            Contactez Nous
+            <div class="urderline"><span></span></div>
+          </h3>
+          <p>01 53 53 50 65</p>
+          <p>01 53 53 50 65</p>
+        </div>
+      </div>
+      <br />
+      <hr />
+      <div class="copy">copyright © 2023 mena - côte d'ivoire</div>
+    </footer>
+  </body>
+</html>
