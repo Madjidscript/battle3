@@ -127,7 +127,7 @@ const premierPage = class {
       res.redirect('/connexion')
     }
   };
-  static detailPage =async (req = request, res = response) => {
+static detailPage =async (req = request, res = response) => {
     if (req.session.user) {
 
 const articleId = req.params.id;
@@ -241,7 +241,7 @@ static editPost = async (req = request, res = response) => {
   };
 
   static articlePagePost = async  (req = request, res = response) => {
-      //req.body.image =req.protocol +"://" + req.get('host')+"/"+req.file.path;
+      
       req.body.image = req.file.path
       console.log(req.body);
       const Articles = new Article(req.body);
@@ -267,6 +267,33 @@ static editPost = async (req = request, res = response) => {
   static deconnexionPage = (req = request, res = response) => {
   req.session.destroy()
   res.redirect('/connexion');
+  };
+
+
+
+
+
+
+
+  static MesblogPage =async (req = request, res = response) => {
+    if (req.session.user) {
+
+const email = req.body.email;
+console.log(email, 'mon vrai email')
+
+    try {
+      const Articles = await Article.find({emails:email});
+      console.log("mon article email",Articles);
+     
+        return res.render("myblog",{user:req.session.user, article:Articles});
+    
+    
+    } catch (error) {
+      res.status(500).send(error);
+    }
+    } else {
+      res.redirect('/connexion')
+    }
   };
 };
 module.exports = premierPage;

@@ -20,16 +20,13 @@
 
         <div class="menu">
           <li><a href="index2">Accueil</a></li>
-          <li><a href="index2">Livres</a></li>
+          <li><a href="articleForm">ajouter un blog</a></li>
+          <li><a href="/myblog">Mes blog</a></li>
           <li><a href="contact">Contact</a></li>
 
           <li><a href="/" id="principale"></a></li>
 
-          <li>
-            <a href="./panier"
-              ><img src="../picture/panier.svg" alt="" /><span id="count">(0)</span></a
-            >
-          </li>
+         
           <li>
             <a href="./profil" 
               ><img src="../picture/profil.svg" alt=""
@@ -63,7 +60,7 @@
   <% let displayedArticlesIslam = 0; %>
 
 <% articles.forEach(function(article) { %>
-  <% if (article.categorie === 'islam' && displayedArticlesIslam < 3) { %>
+  <% if (article.categorie === 'Cusine' && displayedArticlesIslam < 3) { %>
     <!-- Votre code HTML pour afficher un article ici -->
     <div class="carre">
       <a class="image" href="/detail/<%= article._id %>"><img src="/<%= article.image %>" alt="" height="100px" width="100px"></a>
@@ -72,8 +69,7 @@
         <div class="price"><%= article.prix %>$</div>
       </div>
       <div class="bouton">
-        <div class="img"><a href=""><img src="../picture/panier.svg" alt=""></a></div>
-        <div class="texte">Ajouter Au Panier</div>
+        
       </div>
     </div>
 
@@ -107,10 +103,9 @@
               <div class="titre"><%= article.title %></div>
               <div class="price"><%= article.prix %>$</div>
             </div>
-            <div class="bouton">
-              <div class="img"><a href=""><img src="../picture/panier.svg" alt=""></a></div>
-              <div class="texte">Ajouter Au Panier</div>
-            </div>
+            <!-- <div class="bouton">
+              
+            </div> -->
           </div>
       
           
@@ -149,8 +144,7 @@
               <div class="price"><%= article.prix %>$</div>
             </div>
             <div class="bouton">
-              <div class="img"><a href=""><img src="../picture/panier.svg" alt=""></a></div>
-              <div class="texte">Ajouter Au Panier</div>
+              
             </div>
           </div>
       

@@ -17,13 +17,13 @@
 	50%,
 	100% {
 		opacity: 1;
-    background-image: url(/picture/gr1.jpg);
+    background-image: url(/picture/blogsport.jpg);
 	}
 
 	55%,
 	75% {
 		opacity: 1;
-    background-image: url(/picture/gr2.jpg);
+    background-image: url(/picture/cusine.jpg);
 	}
 }
 

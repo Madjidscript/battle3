@@ -13,7 +13,7 @@
         <div class="croix">
           <a href="/"><img src="/picture/ferme1.png" alt="" /></a>
         </div>
-        <h3>Article</h3>
+        <h3>blog</h3>
         <form method="post" action="/articleForm" enctype="multipart/form-data">
           <div class="input">
             <div class="champs" style="margin-bottom: 60px; margin-top: 25px">
@@ -34,10 +34,18 @@
             </div>
             <div class="champs" style="margin-bottom: 60px">
               <input
-                type="number"
-                name="prix"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="entrer votre email"
+              />
+            </div>
+            <div class="champs" style="margin-bottom: 60px">
+              <input
+                type="text"
+                name="bref resumer"
                 id="prix"
-                placeholder="  entrer votre prix"
+                placeholder="  entrer votre bref resumer"
               />
               
             </div>
@@ -46,7 +54,7 @@
                 type="text"
                 name="description"
                 id="description"
-                placeholder="  entrer votre description"
+                placeholder="  entrer votre descriptionde votre blog"
               />
               
             </div>
